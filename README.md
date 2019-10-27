@@ -1,13 +1,11 @@
 A PHP wrapper to be used with [Gitlab's API](https://github.com/gitlabhq/gitlabhq/tree/master/doc/api).
 ==============
 
-[![Build Status](https://travis-ci.org/m4tthumphrey/php-gitlab-api.svg?branch=master)](https://travis-ci.org/m4tthumphrey/php-gitlab-api)
-[![StyleCI](https://styleci.io/repos/6816335/shield?branch=master)](https://styleci.io/repos/6816335)
-[![Total Downloads](https://poser.pugx.org/m4tthumphrey/php-gitlab-api/downloads?format=flat-square)](https://packagist.org/packages/m4tthumphrey/php-gitlab-api)
-[![Latest Stable Version](https://poser.pugx.org/m4tthumphrey/php-gitlab-api/version?format=flat-square)](https://packagist.org/packages/m4tthumphrey/php-gitlab-api)
-[![Latest Unstable Version](https://poser.pugx.org/m4tthumphrey/php-gitlab-api/v/unstable?format=flat-square)](//packagist.org/packages/m4tthumphrey/php-gitlab-api)
+[![Build Status](https://travis-ci.org/Jeroeny/gitlab-api.svg?branch=master)](https://travis-ci.org/jeroeny/gitlab-api)
+[![StyleCI](https://styleci.io/repos/217726394/shield?branch=master)](https://github.styleci.io/repos/217726394)
 
-Forked from [php-gitlab-api](https://github.com/m4tthumphrey/php-gitlab-api) and based on [php-github-api](https://github.com/m4tthumphrey/php-github-api) and code from [KnpLabs](https://github.com/KnpLabs/php-github-api).
+
+Forked from [php-gitlab-api](https://github.com/jeroeny/gitlab-api) and based on [php-github-api](https://github.com/m4tthumphrey/php-github-api) and code from [KnpLabs](https://github.com/KnpLabs/php-github-api).
 
 Installation
 ------------
@@ -15,7 +13,7 @@ Installation
 Via [composer](https://getcomposer.org)
 
 ```bash
-composer require m4tthumphrey/php-gitlab-api
+composer require jeroeny/gitlab-api
 ```
 
 You can visit [HTTPlug for library users](http://docs.php-http.org/en/latest/httplug/users.html) to get more information about installing HTTPlug related packages.
@@ -85,7 +83,7 @@ $issue = $project->createIssue('This does not work.', array(
 $issue->close();
 ```
 
-You get the idea! Take a look around ([API methods](https://github.com/m4tthumphrey/php-gitlab-api/tree/master/lib/Gitlab/Api),
+You get the idea! Take a look around ([API methods](https://github.com/jeroeny/gitlab-api/tree/master/lib/Gitlab/Api),
 [models](https://github.com/m4tthumphrey/php-gitlab-api/tree/master/lib/Gitlab/Model)) and please feel free to report any bugs.
 
 Framework Integrations
