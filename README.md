@@ -7,7 +7,7 @@ A PHP wrapper to be used with [Gitlab's API](https://github.com/gitlabhq/gitlabh
 [![Latest Stable Version](https://poser.pugx.org/m4tthumphrey/php-gitlab-api/version?format=flat-square)](https://packagist.org/packages/m4tthumphrey/php-gitlab-api)
 [![Latest Unstable Version](https://poser.pugx.org/m4tthumphrey/php-gitlab-api/v/unstable?format=flat-square)](//packagist.org/packages/m4tthumphrey/php-gitlab-api)
 
-Based on [php-github-api](https://github.com/m4tthumphrey/php-github-api) and code from [KnpLabs](https://github.com/KnpLabs/php-github-api).
+Forked from [php-gitlab-api](https://github.com/m4tthumphrey/php-gitlab-api) and based on [php-github-api](https://github.com/m4tthumphrey/php-github-api) and code from [KnpLabs](https://github.com/KnpLabs/php-github-api).
 
 Installation
 ------------
@@ -15,23 +15,10 @@ Installation
 Via [composer](https://getcomposer.org)
 
 ```bash
-composer require m4tthumphrey/php-gitlab-api php-http/guzzle6-adapter:^1.0
+composer require m4tthumphrey/php-gitlab-api
 ```
 
-Why `php-http/guzzle6-adapter`? We are decoupled from any HTTP messaging client with help by [HTTPlug](http://httplug.io).
-
 You can visit [HTTPlug for library users](http://docs.php-http.org/en/latest/httplug/users.html) to get more information about installing HTTPlug related packages.
-
-Versioning
-----------
-
-Depending on your Gitlab server version, you must choose the right version of this library.
-Please refer to the following table to pick the right one.
-
-|Version|Gitlab API Version|Gitlab Version|
-|-------|------------------|--------------|
-|9.x    | V4               | >= 9.0       |
-|8.x    | V3               | < 9.5        |
 
 General API Usage
 -----------------
@@ -111,5 +98,4 @@ If you have integrated GitLab into a popular PHP framework, let us know!
 Contributing
 ------------
 
-There are many parts of Gitlab that I have not added to this as it was originally created for personal use, hence the
-lack of tests. Feel free to fork and add new functionality and tests, I'll gladly accept decent pull requests.
+Feel free to fork and add new functionality and/or tests, I'll gladly accept decent pull requests.
