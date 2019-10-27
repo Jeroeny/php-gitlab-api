@@ -3,6 +3,7 @@ A PHP wrapper to be used with [Gitlab's API](https://github.com/gitlabhq/gitlabh
 
 [![Build Status](https://travis-ci.org/Jeroeny/gitlab-api.svg?branch=master)](https://travis-ci.org/jeroeny/gitlab-api)
 [![StyleCI](https://styleci.io/repos/217726394/shield?branch=master)](https://github.styleci.io/repos/217726394)
+[![codecov](https://codecov.io/gh/Jeroeny/gitlab-api/branch/master/graph/badge.svg)](https://codecov.io/gh/Jeroeny/gitlab-api)
 
 
 Forked from [php-gitlab-api](https://github.com/jeroeny/gitlab-api) and based on [php-github-api](https://github.com/m4tthumphrey/php-github-api) and code from [KnpLabs](https://github.com/KnpLabs/php-github-api).
