@@ -1,0 +1,11 @@
+parameters:
+    level: max
+    paths:
+        - src
+    ignoreErrors:
+    - '#Cannot call method [a-zA-Z0-9-_]+\(\) on Gitlab\\Client\|null#'
+    - '#call_user_func_array expects callable#'
+    - '#Parameter \#1 \$response of static method Gitlab\\HttpClient\\Message\\ResponseMediator\:\:getPagination#'
+    - '#Method [a-zA-Z0-9-_::()\\]+ should return [a-zA-Z0-9-_::()\\]+ but returns Gitlab\\Model\\Model#'
+    - '#callback of function array_filter expects callable#'
+    - '#Http\\Message\\MultipartStream\\MultipartStreamBuilder\:\:addResource\(\) expects #'
