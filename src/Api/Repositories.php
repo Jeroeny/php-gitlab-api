@@ -135,8 +135,6 @@ final class Repositories extends ApiBase
      */
     public function releases(int $project_id)
     {
-        $resolver = $this->createOptionsResolver();
-
         return $this->get($this->getProjectPath($project_id, 'releases'));
     }
 
