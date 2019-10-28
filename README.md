@@ -16,7 +16,7 @@ Forked from [php-gitlab-api](https://github.com/jeroeny/gitlab-api) and based on
 Installation
 ------------
 
-Via [composer](https://getcomposer.org)
+Using [composer](https://getcomposer.org):
 
 ```bash
 composer require jeroeny/gitlab-api

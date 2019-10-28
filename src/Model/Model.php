@@ -100,11 +100,7 @@ abstract class Model
             ));
         }
 
-        if (isset($this->data[$property])) {
-            return $this->data[$property];
-        }
-
-        return null;
+        return $this->data[$property] ?? null;
     }
 
     public function __isset(string $property): bool

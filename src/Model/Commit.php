@@ -69,7 +69,7 @@ final class Commit extends Model
         return $commit->hydrate($data);
     }
 
-    public function __construct(Project $project, ?int $id = null, ?Client $client = null)
+    public function __construct(Project $project, ?string $id = null, ?Client $client = null)
     {
         $this->setClient($client);
         $this->setData('project', $project);
