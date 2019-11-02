@@ -1,6 +1,7 @@
 A PHP wrapper to be used with [Gitlab's API](https://github.com/gitlabhq/gitlabhq/tree/master/doc/api).
 ==============
 
+[![PHP version](https://img.shields.io/packagist/php-v/jeroeny/gitlab-api)](https://github.com/Jeroeny/gitlab-api/blob/master/composer.json)
 [![Build Status](https://travis-ci.org/Jeroeny/gitlab-api.svg?branch=master)](https://travis-ci.org/jeroeny/gitlab-api)
 [![StyleCI](https://styleci.io/repos/217726394/shield?branch=master)](https://github.styleci.io/repos/217726394)
 [![codecov](https://codecov.io/gh/Jeroeny/gitlab-api/branch/master/graph/badge.svg)](https://codecov.io/gh/Jeroeny/gitlab-api)
