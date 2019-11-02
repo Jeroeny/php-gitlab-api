@@ -113,7 +113,7 @@ final class MergeRequest extends Model implements Noteable
     public function close(?string $comment = null): MergeRequest
     {
         if ($comment) {
-            $this->addComment($comment);
+            $this->addNote($comment);
         }
 
         return $this->update(['state_event' => 'close']);
@@ -141,9 +141,9 @@ final class MergeRequest extends Model implements Noteable
         return $this->update(['state_event' => 'merge']);
     }
 
-    public function addComment(string $comment): Note
+    public function addNote(string $note): Note
     {
-        $data = $this->client->mergeRequests()->addComment($this->project->id, $this->iid, $comment);
+        $data = $this->client->mergeRequests()->addNote($this->project->id, $this->iid, $note);
 
         return Note::fromArray($this->getClient(), $this, $data);
     }
@@ -151,10 +151,10 @@ final class MergeRequest extends Model implements Noteable
     /**
      * @return Note[]
      */
-    public function showComments(): array
+    public function showNotes(): array
     {
         $notes = [];
-        $data  = $this->client->mergeRequests()->showComments($this->project->id, $this->iid);
+        $data  = $this->client->mergeRequests()->showNotes($this->project->id, $this->iid);
 
         foreach ($data as $note) {
             $notes[] = Note::fromArray($this->getClient(), $this, $note);
