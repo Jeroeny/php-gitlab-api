@@ -486,7 +486,7 @@ final class Project extends Model
 
     public function blob(string $sha, string $filepath): string
     {
-        return $this->client->repositories()->blob($this->id, $sha, $filepath);
+        return $this->client->repositoryFiles()->getRawFile($this->id, $filepath, $sha);
     }
 
     /**
@@ -494,7 +494,7 @@ final class Project extends Model
      */
     public function getFile(string $sha, string $filepath): array
     {
-        return $this->client->repositories()->getFile($this->id, $filepath, $sha);
+        return $this->client->repositoryFiles()->getFile($this->id, $filepath, $sha);
     }
 
     public function createFile(

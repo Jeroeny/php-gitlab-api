@@ -8,12 +8,9 @@ use DateTimeInterface;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
 use Symfony\Component\OptionsResolver\Options;
-use const E_USER_DEPRECATED;
 use function array_filter;
 use function count;
 use function is_array;
-use function sprintf;
-use function trigger_error;
 
 final class MergeRequests extends ApiBase
 {
@@ -165,26 +162,6 @@ final class MergeRequests extends ApiBase
     public function removeNote(int $projectId, int $mrId, int $noteId)
     {
         return $this->delete($this->getProjectPath($projectId, 'merge_requests/' . $this->encodePath((string)$mrId) . '/notes/' . $this->encodePath((string)$noteId)));
-    }
-
-    /**
-     * @return mixed
-     */
-    public function showComments(int $project_id, int $mr_id)
-    {
-        @trigger_error(sprintf('The %s() method is deprecated since version 9.1 and will be removed in 10.0. Use the showNotes() method instead.', __METHOD__), E_USER_DEPRECATED);
-
-        return $this->showNotes($project_id, $mr_id);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function addComment(int $project_id, int $mr_id, string $note)
-    {
-        @trigger_error(sprintf('The %s() method is deprecated since version 9.1 and will be removed in 10.0. Use the addNote() method instead.', __METHOD__), E_USER_DEPRECATED);
-
-        return $this->addNote($project_id, $mr_id, $note);
     }
 
     /**

@@ -7,10 +7,7 @@ namespace Gitlab\Api;
 use DateTimeInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use const E_USER_DEPRECATED;
 use function array_map;
-use function sprintf;
-use function trigger_error;
 
 final class Repositories extends ApiBase
 {
@@ -324,78 +321,6 @@ final class Repositories extends ApiBase
     public function tree(int $project_id, array $params = [])
     {
         return $this->get($this->getProjectPath($project_id, 'repository/tree'), $params);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function blob(int $project_id, string $sha, string $filepath)
-    {
-        @trigger_error(sprintf('The %s() method is deprecated since version 9.2 and will be removed in 10.0. Use the %s::getRawFile() method instead.', __METHOD__, RepositoryFiles::class), E_USER_DEPRECATED);
-
-        return $this->client->repositoryFiles()->getRawFile($project_id, $filepath, $sha);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFile(int $project_id, string $file_path, string $ref)
-    {
-        @trigger_error(sprintf('The %s() method is deprecated since version 9.2 and will be removed in 10.0. Use the %s::getFile() method instead.', __METHOD__, RepositoryFiles::class), E_USER_DEPRECATED);
-
-        return $this->client->repositoryFiles()->getFile($project_id, $file_path, $ref);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function createFile(int $project_id, string $file_path, string $content, string $branch, string $commit_message, ?string $encoding = null, ?string $author_email = null, ?string $author_name = null)
-    {
-        @trigger_error(sprintf('The %s() method is deprecated since version 9.2 and will be removed in 10.0. Use the %s::createFile() method instead.', __METHOD__, RepositoryFiles::class), E_USER_DEPRECATED);
-
-        return $this->client->repositoryFiles()->createFile($project_id, [
-            'file_path' => $file_path,
-            'branch' => $branch,
-            'content' => $content,
-            'commit_message' => $commit_message,
-            'encoding' => $encoding,
-            'author_email' => $author_email,
-            'author_name' => $author_name,
-        ]);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function updateFile(int $project_id, string $file_path, string $content, string $branch, string $commit_message, ?string $encoding = null, ?string $author_email = null, ?string $author_name = null)
-    {
-        @trigger_error(sprintf('The %s() method is deprecated since version 9.2 and will be removed in 10.0. Use the %s::updateFile() method instead.', __METHOD__, RepositoryFiles::class), E_USER_DEPRECATED);
-
-        return $this->client->repositoryFiles()->updateFile($project_id, [
-            'file_path' => $file_path,
-            'branch' => $branch,
-            'content' => $content,
-            'commit_message' => $commit_message,
-            'encoding' => $encoding,
-            'author_email' => $author_email,
-            'author_name' => $author_name,
-        ]);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function deleteFile(int $project_id, string $file_path, string $branch, string $commit_message, ?string $author_email = null, ?string $author_name = null)
-    {
-        @trigger_error(sprintf('The %s() method is deprecated since version 9.2 and will be removed in 10.0. Use the %s::deleteFile() method instead.', __METHOD__, RepositoryFiles::class), E_USER_DEPRECATED);
-
-        return $this->client->repositoryFiles()->deleteFile($project_id, [
-            'file_path' => $file_path,
-            'branch' => $branch,
-            'commit_message' => $commit_message,
-            'author_email' => $author_email,
-            'author_name' => $author_name,
-        ]);
     }
 
     /**

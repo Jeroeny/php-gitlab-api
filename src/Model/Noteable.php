@@ -6,12 +6,12 @@ namespace Gitlab\Model;
 
 interface Noteable
 {
-    public function addComment(string $comment): Note;
+    public function addNote(string $comment): Note;
 
     /**
      * @return Note[]
      */
-    public function showComments(): array;
+    public function showNotes(): array;
 
     /**
      * @return static

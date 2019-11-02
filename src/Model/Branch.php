@@ -8,9 +8,9 @@ use Gitlab\Api\Projects;
 use Gitlab\Client;
 
 /**
- * @property-read string $name
- * @property-read bool $protected
- * @property-read Commit $commit
+ * @property-read string  $name
+ * @property-read bool    $protected
+ * @property-read Commit  $commit
  * @property-read Project $project
  */
 final class Branch extends Model
@@ -86,21 +86,46 @@ final class Branch extends Model
 
     public function createFile(string $file_path, string $content, string $commit_message): File
     {
-        $data = $this->client->repositories()->createFile($this->project->id, $file_path, $content, $this->name, $commit_message);
+        $data = $this->client->repositoryFiles()->createFile(
+            $this->project->id,
+            [
+                'branch' => $this->name,
+                'file_path' => $file_path,
+                'content' => $content,
+                'commit_message' => $commit_message,
+            ]
+        );
 
         return File::fromArray($this->getClient(), $this->project, $data);
     }
 
     public function updateFile(string $file_path, string $content, string $commit_message): File
     {
-        $data = $this->client->repositories()->updateFile($this->project->id, $file_path, $content, $this->name, $commit_message);
+        $data = $this->client->repositoryFiles()->updateFile(
+            $this->project->id,
+            [
+
+                'branch' => $this->name,
+                'file_path' => $file_path,
+                'content' => $content,
+                'commit_message' => $commit_message,
+            ]
+        );
 
         return File::fromArray($this->getClient(), $this->project, $data);
     }
 
     public function deleteFile(string $file_path, string $commit_message): bool
     {
-        $this->client->repositories()->deleteFile($this->project->id, $file_path, $this->name, $commit_message);
+        $this->client->repositoryFiles()->deleteFile(
+            $this->project->id,
+            [
+
+                'branch' => $this->name,
+                'file_path' => $file_path,
+                'commit_message' => $commit_message,
+            ]
+        );
 
         return true;
     }

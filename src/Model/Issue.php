@@ -97,7 +97,7 @@ final class Issue extends Model implements Noteable
     public function close(?string $comment = null): Issue
     {
         if ($comment) {
-            $this->addComment($comment);
+            $this->addNote($comment);
         }
 
         return $this->update(['state_event' => 'close']);
@@ -113,7 +113,7 @@ final class Issue extends Model implements Noteable
         return $this->open();
     }
 
-    public function addComment(string $comment): Note
+    public function addNote(string $comment): Note
     {
         $data = $this->client->issues()->addComment($this->project->id, $this->iid, ['body' => $comment]);
 
@@ -123,7 +123,7 @@ final class Issue extends Model implements Noteable
     /**
      * @return Note[]
      */
-    public function showComments(): array
+    public function showNotes(): array
     {
         $notes = [];
         $data  = $this->client->issues()->showComments($this->project->id, $this->iid);
