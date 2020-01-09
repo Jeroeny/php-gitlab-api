@@ -128,7 +128,7 @@ final class SimpleResultPager implements ResultPager
             return [];
         }
 
-        $pagination = ResponseMediator::getPagination($this->client->getResponseHistory()->getLastResponse());
+        $pagination = ResponseMediator::getPagination($this->client->getResponseHistory()->getLastResponse()) ?? [];
 
         return ResponseMediator::getContent($this->client->getHttpClient()->get($pagination[$key]));
     }
