@@ -43,7 +43,7 @@
         "doctrine/coding-standard": "^6.0 || ^7.0",
         "ergebnis/composer-normalize": "^2.2",
         "guzzlehttp/psr7": "^1.6",
-        "laminas/laminas-diactoros": "2.2",
+        "laminas/laminas-diactoros": "2.2.3",
         "moxio/php-codesniffer-sniffs": "^2.3",
         "php-http/guzzle6-adapter": "^2.0",
         "php-http/mock-client": "^1.3",
